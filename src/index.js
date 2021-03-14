@@ -19,6 +19,9 @@ function install(editor, params) {
     if (snap) {
         this._snap = new SnapGrid(editor, snap);
     }
+
+    editor.bind('zoomAt');
+    editor.on('zoomAt', nodes => zoomAt(editor, nodes));
 }    
 
 export default {
